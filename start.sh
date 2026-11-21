@@ -2,10 +2,10 @@
 # Start script for Anki Sync Server on Railway.
 set -eu
 
-# Listen on Railway's PORT (8080 if unset). "::" accepts IPv4 and IPv6, so the
-# server answers on the public domain and on Railway's private network.
+# Listen on Railway's PORT (8080 if unset) on all IPv4 interfaces. (The server
+# formats host:port without brackets, so an IPv6 host such as "::" won't bind.)
 export SYNC_PORT="${PORT:-${SYNC_PORT:-8080}}"
-export SYNC_HOST="${SYNC_HOST:-::}"
+export SYNC_HOST="${SYNC_HOST:-0.0.0.0}"
 
 # All collections and media are stored on the volume.
 export SYNC_BASE="${SYNC_BASE:-/anki_data}"

@@ -34,7 +34,7 @@ Optional, add them in the service's Variables tab when you need them:
 ## After deploying
 
 1. Open the service's **Variables** tab and copy `ANKI_USERNAME` and `ANKI_PASSWORD`.
-2. In Anki Desktop: *Preferences → Syncing → Self-hosted sync server*, enter `https://YOUR-DOMAIN.up.railway.app/` (your service's public domain, with the trailing slash), restart Anki, then click **Sync** and log in. AnkiDroid: *Settings → Sync → Custom sync server* (set both the sync and media URLs, `https://YOUR-DOMAIN.up.railway.app/` and `https://YOUR-DOMAIN.up.railway.app/msync/`). AnkiMobile: *Settings → Syncing → Custom server*.
+2. In Anki Desktop: *Preferences → Syncing → Self-hosted sync server*, enter `https://YOUR-DOMAIN.up.railway.app/` (your service's public domain, with the trailing slash), restart Anki, then click **Sync** and log in. AnkiDroid and AnkiMobile have the same "custom sync server" setting in their sync preferences: use the same URL.
 3. On the first sync choose **Upload to AnkiWeb** on the device that has your collection; other devices then choose **Download**.
 
 Anki's messages still say "AnkiWeb" when a custom server is set: that's expected.

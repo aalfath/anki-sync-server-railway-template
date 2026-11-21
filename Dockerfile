@@ -18,8 +18,8 @@ RUN pip install --require-hashes --only-binary=:all: -r /tmp/requirements.txt \
 COPY start.sh /usr/local/bin/start.sh
 RUN chmod 755 /usr/local/bin/start.sh && mkdir -p /anki_data
 
-# Collections and media live here; mount a volume on it.
-VOLUME /anki_data
+# Collections and media live in /anki_data: mount a volume there
+# (Railway rejects the Dockerfile VOLUME instruction, so there is none).
 EXPOSE 8080
 
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
